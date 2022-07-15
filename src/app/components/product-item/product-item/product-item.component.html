@@ -1,0 +1,21 @@
+<div class="card" style="width: 18rem;">
+  <img [src]="product!.url" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{product!.name}}</h5>
+    <p class="card-text">${{product!.price}}
+    </p>
+    <div class="d-flex justify-content-between">
+
+      <a class="btn btn-primary" (click)="addToCart()">Add to cart</a>
+
+      <select #quantity class="quantity-select" name="" id="" (change)="onSelected(quantity.value)">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+
+    </div>
+  </div>
+</div>

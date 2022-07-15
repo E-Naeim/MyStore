@@ -1,0 +1,29 @@
+.container{
+
+  .success{
+    margin-top: 50px;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #D90429;
+  }
+
+  .name, .price{
+    font-weight: 500;
+  }
+
+  .back{  
+    background-color: #D90429;
+    color: #F3F0D5;
+    height: 40px;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    transition: all 0.3 ease-in-out;
+
+    &:hover{
+      background-color: #F3F0D5;
+      color: #D90429;
+      outline: 1px solid #D90429;
+    }
+  }
+}

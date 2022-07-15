@@ -1,0 +1,43 @@
+.card{
+  display: inline-block;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  max-width: 250px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+  img{
+    max-width: 250px;
+    max-height: 300px;
+    object-fit: cover;
+  }
+
+  .btn{
+    background-color: #d90429;
+    color: #F3F0D5;
+    outline: none;
+    border: none;
+    border-radius: 2px;
+
+    &:hover{
+      background-color: #F3F0D5;
+      color: #d90429;
+      outline: 1px solid #d90429;
+    }
+  }
+
+  .quantity-select{
+    width: 80px;
+  }
+
+  select{
+    background-color: #F3F0D5;
+    cursor: pointer;
+  }
+
+  select option {
+    background-color: #F3F0D5;
+    font-weight: bold;
+    color: #d90429;
+}
+
+}

@@ -1,0 +1,57 @@
+<div class="container prod-card d-flex align-items-start justify-content-center">
+
+  <div class="products d-flex flex-column">
+
+    <div class="product-card d-flex ju align-items-center" *ngFor="let cart of cart">
+
+      <div class="img">
+        <img class="img-fluid" [src]="cart.product.url" alt="">
+      </div>
+
+      <div class="details">
+        <p class="name">{{cart.product.name}}</p>
+        <p class="price">${{cart.product.price}}</p>
+        <span>Quantity: </span>
+
+        <select #quantity name="" id="" (change)="changeQuantity(quantity.value, cart)">
+          <option value="1" [selected]="cart.quantity == 1">1</option>
+          <option value="2" [selected]="cart.quantity == 2">2</option>
+          <option value="3" [selected]="cart.quantity == 3">3</option>
+          <option value="4" [selected]="cart.quantity == 4">4</option>
+          <option value="5" [selected]="cart.quantity == 5">5</option>
+        </select>
+
+        <button class="delete mt-3" (click)="delete(cart)">Delete</button>
+      </div>
+    </div>
+
+    <p class="total">Total: ${{total | number : '1.0-2'}}</p>
+
+  </div>
+
+  <div class="address">
+    <form class="example-form d-flex flex-column" (ngSubmit)="submit()" [formGroup]="userForm">
+
+      <mat-form-field class="example-full-width mb-4" hintLabel="Min 3 characters" appearance="fill">
+        <mat-label>Full name</mat-label>
+        <input matInput placeholder="Ex. Emad Naeim" formControlName="fullName">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width mb-4" hintLabel="Min 6 characters" appearance="fill">
+        <mat-label>Address</mat-label>
+        <input matInput placeholder="Ex. Qena St., Egypt" formControlName="address">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width mb-4" hintLabel="Min 16 numbers" appearance="fill">
+        <mat-label>Credit card number</mat-label>
+        <input matInput placeholder="Ex. 1234 5678 1234 5678" formControlName="cardNumber">
+      </mat-form-field>
+
+      <p>We'll never share your payment details with anyone else.</p>
+
+      <button class="submit" type="submit" *ngIf="userForm.valid">Submit</button>
+      <button class="disabled" disabled *ngIf="!userForm.valid">Submit</button>
+
+    </form>
+  </div>
+</div>
