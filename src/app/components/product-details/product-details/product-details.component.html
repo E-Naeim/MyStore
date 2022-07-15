@@ -13,7 +13,7 @@
       <p class="description">{{product!.description}}</p>
       <span>Quantity: </span>
 
-      <select name="" id="">
+      <select #quantity name="" id="" (change)="onSelected(quantity.value)">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -21,9 +21,9 @@
         <option value="5">5</option>
       </select>
 
-      <a href="#" class="btn btn-primary">Add to cart</a>
+      <a class="btn btn-primary" (click)="addToCart()">Add to cart</a>
 
-      <a class="back" href=""><i class="bi bi-arrow-left"></i> Back to product list</a>
+      <a class="back" routerLink="/home"><i class="bi bi-arrow-left"></i> Back to product list</a>
     </div>
 
   </div>

@@ -1,7 +1,10 @@
 <div class="card" style="width: 18rem;">
-  <img [src]="product!.url" class="card-img-top" alt="...">
+  <a routerLink="/product/{{product!.id}}">
+    <img [src]="product!.url" class="card-img-top" alt="...">
+  </a>
+
   <div class="card-body">
-    <h5 class="card-title">{{product!.name}}</h5>
+    <h5 class="card-title" routerLink="/product/{{product!.id}}">{{product!.name}}</h5>
     <p class="card-text">${{product!.price}}
     </p>
     <div class="d-flex justify-content-between">
