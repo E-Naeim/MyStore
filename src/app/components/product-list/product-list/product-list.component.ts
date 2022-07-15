@@ -22,4 +22,10 @@ export class ProductListComponent implements OnInit {
       error: (err) => this.toastr.error(err),
     });
   }
+
+  hide(_product: IProduct) {
+    this.productList = this.productList?.filter(
+      (product) => product.id != _product.id
+    );
+  }
 }

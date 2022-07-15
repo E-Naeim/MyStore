@@ -2,26 +2,22 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.1.
 
-## Development server
+# steps before running the project
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1- Don't forget to run "npm install" to install all packages and dependencies.
+2- Run the following command "npm run json:server" before running the "ng serve" command
 
-## Code scaffolding
+# Brief for the project
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1- The home page consists of a parent component which is "product-list" which loops the child component "product-item" making the home page.
+2- "product-item" component recieves the product from its parent -in this case "product-list- as an Input.
+3- The third component which is "product-details" capture the id in url and display the all information about the product.
+4- "cart" component displays the products that were added to the cart in db.json(act as database).
+5- You can add any product at any page .. home, product details or even change the quantity inside the cart page.
+6- Any change on the quantity in any page will reflect in all pages and the total amount.
+7- After making the order the cart will be empty, feel free to add products again.
 
-## Build
+# last changes made
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1- used ngModelChange to display an error if full name length is less than 3 characters, and address also.
+2- used event emitter to can hide a product if clicked on (X) icon

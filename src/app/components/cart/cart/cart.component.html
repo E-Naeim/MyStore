@@ -34,12 +34,14 @@
 
       <mat-form-field class="example-full-width mb-4" hintLabel="Min 3 characters" appearance="fill">
         <mat-label>Full name</mat-label>
-        <input matInput placeholder="Ex. Emad Naeim" formControlName="fullName">
+        <input matInput placeholder="Ex. Emad Naeim" formControlName="fullName" (ngModelChange)="inputChange()">
+        <mat-error *ngIf="fullNameError">Full name is less than 3 characters!</mat-error>
       </mat-form-field>
 
       <mat-form-field class="example-full-width mb-4" hintLabel="Min 6 characters" appearance="fill">
         <mat-label>Address</mat-label>
         <input matInput placeholder="Ex. Qena St., Egypt" formControlName="address">
+        <mat-error *ngIf="addressError">Address is less than 6 characters!</mat-error>
       </mat-form-field>
 
       <mat-form-field class="example-full-width mb-4" hintLabel="Min 16 numbers" appearance="fill">

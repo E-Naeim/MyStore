@@ -1,8 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { ICart } from 'src/app/models/icart';
 import { IProduct } from 'src/app/models/iproduct';
 import { CartService } from 'src/app/services/cart/cart.service';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-product-item',
@@ -10,6 +11,8 @@ import { CartService } from 'src/app/services/cart/cart.service';
   styleUrls: ['./product-item.component.scss'],
 })
 export class ProductItemComponent implements OnInit {
+  @Output() hideProduct: EventEmitter<IProduct> = new EventEmitter();
+
   constructor(
     private cartService: CartService,
     private toastr: ToastrService
@@ -53,5 +56,9 @@ export class ProductItemComponent implements OnInit {
 
   onSelected(value: string) {
     this.quantity = value;
+  }
+
+  hide(_product: IProduct): void {
+    this.hideProduct.emit(_product);
   }
 }

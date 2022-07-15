@@ -1,6 +1,8 @@
 <div class="card" style="width: 18rem;">
+  <i class="bi bi-x-circle-fill" (click)="hide(product!)"></i>
   <a routerLink="/product/{{product!.id}}">
     <img [src]="product!.url" class="card-img-top" alt="...">
+
   </a>
 
   <div class="card-body">

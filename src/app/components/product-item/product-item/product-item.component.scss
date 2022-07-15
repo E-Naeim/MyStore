@@ -12,6 +12,21 @@
     cursor: pointer;
   }
 
+  .bi-x-circle-fill{
+    border-radius: 100%;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    color: #d90429;
+    font-size: 1.3rem;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+
+    &:hover{
+      color: black;
+    }
+  }
+
   .card-title{
     cursor: pointer;
   }
